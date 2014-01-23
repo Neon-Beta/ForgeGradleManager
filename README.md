@@ -8,6 +8,8 @@ A simple program designed to help you with troubles of FG, and offers a version 
 Most of the program should make sense, but if you should fail to determine the function of a button, or checkbox.
 This guide is here.
 
+**Guide**
+***
 1: The "+" button increments the version number in the field as if it was one big number.  
 2: The "-" button decrements the version number in the field as if it was one big number.  
 3: The field with version number is a dynamic field, so you can add to it if you wish.
