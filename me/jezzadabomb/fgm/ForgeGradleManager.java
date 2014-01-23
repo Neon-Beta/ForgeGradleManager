@@ -34,6 +34,7 @@ public class ForgeGradleManager {
     private boolean debugMode;
     private boolean secondaryFile = false;
     private boolean cleanBuild = false;
+    private boolean autoIncrement = false;
     public String buildFile = "build.gradle";
     private ArrayList<String> oldFile = new ArrayList<String>();
     private ArrayList<Integer> intList = new ArrayList<Integer>();
@@ -105,7 +106,7 @@ public class ForgeGradleManager {
             }
         });
         jFrame.setTitle("Forge Gradle Manager " + utils.getFGMVersion());
-        jFrame.setBounds(100, 100, 392, 199);
+        jFrame.setBounds(100, 100, 389, 191);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         final JButton btnSecondary = new JButton("Secondary");
@@ -143,7 +144,7 @@ public class ForgeGradleManager {
         versionField = new JTextField();
         versionField.setBounds(70, 17, 186, 20);
         versionField.setText(getVersionString());
-        setVersionNumber(getTextFieldAsNumber() + 1);
+        setVersionNumber( autoIncrement ? getTextFieldAsNumber() + 1 : getTextFieldAsNumber());
         jFrame.getContentPane().add(versionField);
         versionField.setColumns(10);
         startBuild.setToolTipText("Change the version, and run the build script.");
@@ -161,7 +162,7 @@ public class ForgeGradleManager {
                 debugMode = !debugMode;
             }
         });
-        chckbxDebugMode.setBounds(312, 129, 72, 23);
+        chckbxDebugMode.setBounds(315, 125, 72, 23);
         jFrame.getContentPane().add(chckbxDebugMode);
 
         JButton installButton = new JButton("Install");
@@ -204,10 +205,10 @@ public class ForgeGradleManager {
                 cleanBuild = !cleanBuild;
             }
         });
-        chckbxCleanBuild.setBounds(249, 95, 97, 23);
+        chckbxCleanBuild.setBounds(150, 95, 97, 23);
         jFrame.getContentPane().add(chckbxCleanBuild);
 
-        btnSecondary.setBounds(10, 129, 100, 23);
+        btnSecondary.setBounds(113, 125, 100, 23);
         jFrame.getContentPane().add(btnSecondary);
 
         JButton saveToConfig = new JButton("Save To Config");
@@ -220,7 +221,7 @@ public class ForgeGradleManager {
         jFrame.getContentPane().add(saveToConfig);
 
         batchFileName = new JLabel("No file selected");
-        batchFileName.setBounds(120, 133, 186, 14);
+        batchFileName.setBounds(223, 129, 186, 14);
         jFrame.getContentPane().add(batchFileName);
 
         configManager.readFromConfig();
@@ -238,8 +239,19 @@ public class ForgeGradleManager {
                 batchFileName.setVisible(secondaryFile);
             }
         });
-        chckbxSecondary.setBounds(150, 95, 97, 23);
+        chckbxSecondary.setBounds(10, 125, 97, 23);
         jFrame.getContentPane().add(chckbxSecondary);
+        
+        JCheckBox chckbxAutoincrement = new JCheckBox("Auto Increment");
+        chckbxAutoincrement.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                autoIncrement = !autoIncrement;
+            }
+        });
+        chckbxAutoincrement.setToolTipText("If selected this program auto increments the version number, after starting, and after building.");
+        chckbxAutoincrement.setBounds(249, 95, 115, 23);
+        chckbxAutoincrement.setSelected(autoIncrement);
+        jFrame.getContentPane().add(chckbxAutoincrement);
     }
 
     private String getVersionString() {
@@ -347,6 +359,14 @@ public class ForgeGradleManager {
     public void setBatchFileName(String text) {
         batchFileName.setText(text);
     }
+    
+    public boolean getAutoIncrement(){
+        return autoIncrement;
+    }
+    
+    public void setAutoIncrement(boolean autoIncrement){
+        this.autoIncrement = autoIncrement;
+    }
 
     private void startCommand() {
         startBuild.setText("Building...");
@@ -369,6 +389,6 @@ public class ForgeGradleManager {
             }
         }
         configManager.saveToConfig();
-        setVersionNumber(getTextFieldAsNumber() + 1);
+        setVersionNumber(autoIncrement ? getTextFieldAsNumber() + 1 : getTextFieldAsNumber());
     }
 }

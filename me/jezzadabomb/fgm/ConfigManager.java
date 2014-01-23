@@ -51,6 +51,8 @@ public class ConfigManager {
                 fgm.setSecondaryFile(Boolean.parseBoolean(line.substring(line.lastIndexOf(" ") + 1)));
             } else if (line.startsWith("cleanBuild:")) {
                 fgm.setCleanBuild(Boolean.parseBoolean(line.substring(line.lastIndexOf(" ") + 1)));
+            } else if (line.startsWith("autoIncrement:")) {
+                fgm.setAutoIncrement(Boolean.parseBoolean(line.substring(line.lastIndexOf(" ") + 1)));
             } else if (line.startsWith("batchFile:")) {
                 String temp = line.substring(line.indexOf(":") + 2);
                 if (temp.equals("blank") || !temp.endsWith(".bat")) {
@@ -77,6 +79,7 @@ public class ConfigManager {
                 add("secondary: " + fgm.getSecondaryFile());
                 add("cleanBuild: " + fgm.getCleanBuild());
                 add("batchFile: " + (batchFile == "" ? "blank" : (batchFile.startsWith(" ") ? batchFile.substring(1) : batchFile)));
+                add("autoIncrement: " + fgm.getAutoIncrement());
             }
         };
 
