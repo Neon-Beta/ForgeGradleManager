@@ -219,7 +219,7 @@ public class ForgeGradleManager {
         saveToConfig.setBounds(10, 95, 134, 23);
         jFrame.getContentPane().add(saveToConfig);
 
-        batchFileName = new JLabel("File");
+        batchFileName = new JLabel("No file selected");
         batchFileName.setBounds(120, 133, 186, 14);
         jFrame.getContentPane().add(batchFileName);
 

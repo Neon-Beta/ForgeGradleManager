@@ -57,7 +57,7 @@ public class Utils {
 
     public String getFileForExecute() {
         JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Window DOS Files", "bat");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Script files", "bat", "sh");
         chooser.setFileFilter(filter);
 
         int returnValue = chooser.showOpenDialog(null);
