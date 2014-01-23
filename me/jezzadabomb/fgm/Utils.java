@@ -16,7 +16,7 @@ public class Utils {
     }
 
     public boolean isInDevEnvironment() {
-        return getWorkingDirectory().equals("C:/Users/Jeremy/Desktop/Java Projects/VersionPicker/bin/");
+        return "true".equalsIgnoreCase(System.getProperty("jezza.debug"));
     }
 
     public String getFGMVersion() {
