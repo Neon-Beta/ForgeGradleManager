@@ -18,7 +18,8 @@ public class CommandParser {
             return;
         try {
             String osName = System.getProperty("os.name");
-            if (!osName.toLowerCase().startsWith("windows")) {
+
+            if (osName.toLowerCase().startsWith("windows")) {
                 Runtime.getRuntime().exec("cmd /c start " + command);
             } else {
                 Runtime.getRuntime().exec(command);
