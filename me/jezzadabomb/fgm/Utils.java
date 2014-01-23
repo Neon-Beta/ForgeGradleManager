@@ -7,7 +7,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Utils {
 
     ForgeGradleManager fgm;
-    public String gradleFile = "gradlew.bat";
+    public String gradleFile = "gradlew";
     public String batchFile = "";
     private String fgVersion = "v0.04";
 
