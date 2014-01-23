@@ -1,4 +1,4 @@
-package me.jezzadabomb.vp;
+package me.jezzadabomb.fgm;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -1,4 +1,4 @@
-package me.jezzadabomb.vp;
+package me.jezzadabomb.fgm;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
