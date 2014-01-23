@@ -5,8 +5,8 @@ A simple program designed to help you with troubles of FG, and offers a version 
 
 [Screenshot](http://puu.sh/6uGeb.png)
 
-Most of the program should make sense, but if you should fail to determine the function of a button, or checkbox.
-Simply place it inside the folder with the gradlew file.
+Most of the program should make sense, but if you should fail to determine the function of a button, or checkbox.  
+Simply place it inside the folder with the gradlew file.  
 
 
 **Guide**
