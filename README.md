@@ -3,7 +3,7 @@ ForgeGradleManager
 
 A simple program designed to help you with troubles of FG, and offers a version control system.
 
-[Screenshot](http://puu.sh/6uGeb.png)  
+[Screenshot](http://puu.sh/6uJsv.png)  
 [Download!](https://www.dropbox.com/s/7o9xxe5tlqe86v7/ForgeGradleManager.jar)  
 
 Most of the program should make sense, but if you should fail to determine the function of a button, or checkbox.  
